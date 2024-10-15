@@ -1,31 +1,25 @@
-import React from 'react'
+import React from 'react';
 import "./styles.css";
 
-
-interface Props{
+interface Props {
     todo: string;
     setTodo: React.Dispatch<React.SetStateAction<string>>;
-    handleAdd: (e: React.FormEvent)=> void;
+    handleAdd: (e: React.FormEvent) => void;
 }
 
-/* todo and setTodo was passed in from App.tsx */
-const InputFeild: React.FC<Props> = ({todo, setTodo, handleAdd} : Props) => {
+const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
   return (
-    <form className="input">
-        <input 
-            type="input" 
-            onSubmit={handleAdd}
-            value={todo}
-            onChange={
-                (e)=> setTodo(e.target.value)
-            }
-            className="input__box" 
-            placeholder='Enter a task' 
-        />
-
-        <button className="input__submit" type="submit">Go</button>
+    <form className="input" onSubmit={handleAdd}>
+      <input 
+        type="input" 
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+        className="input__box" 
+        placeholder="Enter a task" 
+      />
+      <button className="input__submit" type="submit">Go</button>
     </form>
-  )
+  );
 }
 
-export default InputFeild
+export default InputField;
