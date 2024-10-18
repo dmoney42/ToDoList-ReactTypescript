@@ -92,5 +92,26 @@ to appear as if were pushing the button so when clicked, maek the button
     .todos__single{
         width: 100%;
     }
+} 
+
+@media (max-width: 1200px){
+    .todos__single{
+        width: 40%;
+    }
+}
+
+@media (max-width: 700px){
+    .input{
+        width: 95%;
+    }
+
+    .todos{
+        width: 95%;
+    }
+
+    .todos__single{
+        width:100%;
+    }
+
 }
 
